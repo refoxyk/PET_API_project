@@ -18,7 +18,7 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
 
-        // Устанавливаем разметку, чтобы можно было найти элементы UI
+      
         setContentView(R.layout.activity_second)
 
         // Получаем ссылки на элементы после вызова setContentView
@@ -30,7 +30,7 @@ class SecondActivity : AppCompatActivity() {
         val bt_submit = findViewById<Button>(R.id.submit_bt)
         val bt_get = findViewById<Button>(R.id.get_bt)
 
-        // Создаем объект для данных
+  
 
 
         bt_submit.setOnClickListener {
