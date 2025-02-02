@@ -100,7 +100,7 @@ class SecondActivity : AppCompatActivity() {
                     val client = response.body() // Получаем объект клиента из ответа
 
                     if (client != null) {
-                        // Извлекаем отдельные переменные
+                      
                         val fullName = client.fullName
                         val email = client.email
                         val phoneNumber = client.phoneNumber
@@ -119,14 +119,14 @@ class SecondActivity : AppCompatActivity() {
 
 
 
-                        // Выводим их в лог или показываем в UI
+                    
                         Log.d("API_RESPONSE", "Full Name: $fullName")
                         Log.d("API_RESPONSE", "Email: $email")
                         Log.d("API_RESPONSE", "Phone: $phoneNumber")
                         Log.d("API_RESPONSE", "Address: $address")
                         Log.d("API_RESPONSE", "Created At: $createdAt")
 
-                        // Пример вывода на экран через Toast
+                      
                         Toast.makeText(this@SecondActivity, "Client Name: $fullName", Toast.LENGTH_LONG).show()
 
                     } else {
