@@ -21,7 +21,7 @@ class SecondActivity : AppCompatActivity() {
       
         setContentView(R.layout.activity_second)
 
-        // Получаем ссылки на элементы после вызова setContentView
+      
         val ed_name = findViewById<EditText>(R.id.name_ed)
         val ed_surname = findViewById<EditText>(R.id.surname_ed)
         val ed_email = findViewById<EditText>(R.id.email_ed)
