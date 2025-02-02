@@ -97,7 +97,7 @@ class SecondActivity : AppCompatActivity() {
         call.enqueue(object : Callback<Client> {
             override fun onResponse(call: Call<Client>, response: Response<Client>) {
                 if (response.isSuccessful) {
-                    val client = response.body() // Получаем объект клиента из ответа
+                    val client = response.body() 
 
                     if (client != null) {
                       
