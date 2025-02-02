@@ -13,47 +13,47 @@ import retrofit2.http.Path
 
 interface ApiService {
 
-    // Клиенты
+ 
     @GET("api/clients")
-    fun getAllClients(): Call<List<Client>> // Получить всех клиентов
+    fun getAllClients(): Call<List<Client>> 
 
     @GET("api/clients/{id}")
     fun getClientById(@Path("id")clientId: Int): Call<Client>
 
     @POST("api/clients")
-    fun createClient(@Body client: Client): Call<Client> // Создать нового клиента
+    fun createClient(@Body client: Client): Call<Client> 
 
     @PUT("api/clients/{id}")
-    fun updateClient(@Path("id") clientId: Int, @Body client: Client): Call<Client> // Обновить клиента
+    fun updateClient(@Path("id") clientId: Int, @Body client: Client): Call<Client> 
 
     @DELETE("api/clients/{id}")
-    fun deleteClient(@Path("id") clientId: Int): Call<Void> // Удалить клиента
+    fun deleteClient(@Path("id") clientId: Int): Call<Void>
 
 
-    // Курьеры
+
     @GET("api/couriers")
-    fun getAllCouriers(): Call<List<Courier>> // Получить всех курьеров
+    fun getAllCouriers(): Call<List<Courier>>
 
     @POST("api/couriers")
-    fun createCourier(@Body courier: Courier): Call<Courier> // Создать нового курьера
+    fun createCourier(@Body courier: Courier): Call<Courier> 
 
     @PUT("api/couriers/{id}")
-    fun updateCourier(@Path("id") courierId: Int, @Body courier: Courier): Call<Courier> // Обновить курьера
+    fun updateCourier(@Path("id") courierId: Int, @Body courier: Courier): Call<Courier> 
 
     @DELETE("api/couriers/{id}")
-    fun deleteCourier(@Path("id") courierId: Int): Call<Void> // Удалить курьера
+    fun deleteCourier(@Path("id") courierId: Int): Call<Void> 
 
 
-    // Заказы
+
     @GET("api/orders")
-    fun getAllOrders(): Call<List<Order>> // Получить все заказы
+    fun getAllOrders(): Call<List<Order>>
 
     @POST("api/orders")
-    fun createOrder(@Body order: Order): Call<Order> // Создать новый заказ
+    fun createOrder(@Body order: Order): Call<Order> 
 
     @PUT("api/orders/{id}")
-    fun updateOrder(@Path("id") orderId: Int, @Body order: Order): Call<Order> // Обновить заказ
+    fun updateOrder(@Path("id") orderId: Int, @Body order: Order): Call<Order> 
 
     @DELETE("api/orders/{id}")
-    fun deleteOrder(@Path("id") orderId: Int): Call<Void> // Удалить заказ
+    fun deleteOrder(@Path("id") orderId: Int): Call<Void> 
 }
