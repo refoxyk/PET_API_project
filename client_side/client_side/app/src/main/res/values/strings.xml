@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PET_aplication</string>
+    <string name="hello_comunyty">Hello Comunyty!</string>
+    <string name="next">Next</string>
+    <string name="input_name">Input name: </string>
+    <string name="input_surname">Input surname: </string>
+    <string name="input_e_mail">Input e-mail: </string>
+    <string name="input_phone_numb">Input phone.numb: </string>
+    <string name="input_address">Input address: </string>
+    <string name="submit">Submit</string>
+    <string name="get">Get</string>
+</resources>
