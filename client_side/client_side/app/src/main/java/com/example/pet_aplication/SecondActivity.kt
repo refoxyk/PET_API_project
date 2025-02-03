@@ -1,5 +1,6 @@
 package com.example.pet_aplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -28,9 +29,9 @@ class SecondActivity : AppCompatActivity() {
         val ed_phone = findViewById<EditText>(R.id.phone_ed)
         val ed_address = findViewById<EditText>(R.id.address_ed)
         val bt_submit = findViewById<Button>(R.id.submit_bt)
-        val bt_get = findViewById<Button>(R.id.get_bt)
+        val bt_next = findViewById<Button>(R.id.next_sec_bt)
 
-  
+        
 
 
         bt_submit.setOnClickListener {
@@ -56,9 +57,10 @@ class SecondActivity : AppCompatActivity() {
             createClient(newClient)
         }
 
-        bt_get.setOnClickListener{
-            val id = 1
-            getClientById(id)
+        bt_next.setOnClickListener{
+            val intent = Intent(this, ThirdActivity::class.java)
+
+            startActivity(intent)
         }
 
 
@@ -91,59 +93,6 @@ class SecondActivity : AppCompatActivity() {
     }
 
 
-    private fun getClientById(clientId: Int) {
-        val call = RetrofitInstance.api.getClientById(clientId)
 
-        call.enqueue(object : Callback<Client> {
-            override fun onResponse(call: Call<Client>, response: Response<Client>) {
-                if (response.isSuccessful) {
-                    val client = response.body() 
-
-                    if (client != null) {
-                      
-                        val fullName = client.fullName
-                        val email = client.email
-                        val phoneNumber = client.phoneNumber
-                        val address = client.address
-                        val createdAt = client.createdAt
-                        val clientId = client.klientID
-
-                        var  client = Client(
-                             klientID  =clientId ,
-                             fullName = fullName,
-                             email = email ,
-                             address = address ,
-                             phoneNumber = phoneNumber,
-                             createdAt = createdAt
-                        )
-
-
-
-                    
-                        Log.d("API_RESPONSE", "Full Name: $fullName")
-                        Log.d("API_RESPONSE", "Email: $email")
-                        Log.d("API_RESPONSE", "Phone: $phoneNumber")
-                        Log.d("API_RESPONSE", "Address: $address")
-                        Log.d("API_RESPONSE", "Created At: $createdAt")
-
-                      
-                        Toast.makeText(this@SecondActivity, "Client Name: $fullName", Toast.LENGTH_LONG).show()
-
-                    } else {
-                        Log.e("API_ERROR", "Client not found")
-                        Toast.makeText(this@SecondActivity, "Client not found", Toast.LENGTH_LONG).show()
-                    }
-                } else {
-                    Log.e("API_ERROR", "Error: ${response.code()}")
-                    Toast.makeText(this@SecondActivity, "Error: ${response.code()}", Toast.LENGTH_LONG).show()
-                }
-            }
-
-            override fun onFailure(call: Call<Client>, t: Throwable) {
-                Log.e("API_FAILURE", "Failure: ${t.message}")
-                Toast.makeText(this@SecondActivity, "Failed to connect to server!", Toast.LENGTH_LONG).show()
-            }
-        })
-    }
 
 }
